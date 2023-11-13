@@ -21,7 +21,7 @@ npm install
 ### 2. Connect the database
 Assumption, this project is starting from scratch
 
-Add DATABASE_URL in .env with format : postgresql://janedoe:mypassword@localhost:5432/mydb?schema=sample
+Add DATABASE_URL in .env with format : `postgresql://username:pasword@host:port/databassename?schema=sample`
 
 then run the first migration with this command: 
 ```
