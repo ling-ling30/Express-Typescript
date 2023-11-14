@@ -1,41 +1,36 @@
-# REST API Example
+# User Services
 
-This example shows how to implement a **REST API with TypeScript** using [Express](https://expressjs.com/) and [Prisma Client](https://www.prisma.io/docs/concepts/components/prisma-client). The example uses an PosgreSQL database file.
-## Getting started
+This services handles the registration and login functionality also authorization.
 
+Registration available in two different variant :
 
-Clone this repository:
+- registration with role of User
+  can be done by everyone
+- registration with role of Admin
+  can be done only by Super Admin
 
-```
-https://github.com/ling-ling30/Express-Typescript
-```
+there is Super Admin that has seeded to the database
 
-Install npm dependencies:
+Login process checked email and password and return tokens that provide information about role and email of user.
 
-```
-npm install
-```
+Role can be accessed through role that provides in token, and there's middleware that handled the information provided by Token into request.user
 
-</details>
+## npm packages
 
-### 2. Connect the database
-Assumption, this project is starting from scratch
+Made by using :
+-@prisma/client: ^5.5.2,
+-bcryptjs: ^2.4.3,
+-cors: ^2.8.5,
+-dotenv: ^16.3.1,
+-express: 4.18.2,
+-jsonwebtoken: ^9.0.2
 
-Add DATABASE_URL in .env with format : `postgresql://username:pasword@host:port/databassename?schema=sample`
+## TODO
 
-then run the first migration with this command: 
-```
-npx prisma migrate dev --name init
-```
+- Login and Register functionality
+- Set-up authentication and authorization
 
-then run generate prsima client
-```
-npm install @prisma/client
-```
+## Getting Help
+- 
 
-
-### 3. Start the REST API server
-
-```
-npm run dev
-```
+## Further Reading

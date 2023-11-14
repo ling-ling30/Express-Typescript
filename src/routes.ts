@@ -1,6 +1,6 @@
+const userRoute = require("./routes/userRoute");
 const routers = require("express").Router();
-const controller = require("./routes/helloRoute");
 
-routers.use("/", controller);
+routers.use("/api/user", userRoute);
 
 module.exports = routers;
